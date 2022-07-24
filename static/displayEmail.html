@@ -9,18 +9,16 @@
 </head>
 <body>
     <script>
- $.ajax({
-			url: `/getData`, success: function (result) {
-				//Clear Data
+        $.ajax({
+            url: "/getData", success: function(result){
                 var userData = JSON.parse(result);
-
                 $("body").prepend(`
-                <img src="${userData.data.profile}">
-                <h1>Welcome ${userData.data.email}</h1>
-                <a href="/logout">log out</a>
+                    <img src="${userData.profile}">
+                    <h1>Welcome ${userData.email}</h1>
+                    <a href="/logout">log out</a>
                 `)
-			}
-		});
+            }
+        });
     </script>
 </body>
 </html>
